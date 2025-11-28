@@ -1,0 +1,19 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.table {
+    font-size: 0.9rem;
+}
+
+.btn {
+    border-radius: 6px !important;
+}
+
+.navbar-brand {
+    letter-spacing: 1px;
+}
