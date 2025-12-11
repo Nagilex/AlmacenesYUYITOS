@@ -17,12 +17,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # ---- Seguridad y modo producción ----
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-key')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = [
-    "almacenesyuyitos.onrender.com",
-    "yuyitos.onrender.com",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = [h for h in os.environ.get('ALLOWED_HOSTS','').split(',') if h]
+
 
 
 # ---- Apps ----
