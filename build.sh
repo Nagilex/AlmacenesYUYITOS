@@ -1,9 +1,9 @@
-cat > build.sh <<'EOF'
 #!/usr/bin/env bash
 set -o errexit
 
-pip install -r requirements.txt
-python manage.py collectstatic --no-input
-python manage.py migrate --no-input
-EOF
-chmod +x build.sh
+# Instala dependencias con Poetry (usa poetry.lock)
+poetry install --no-interaction --no-ansi
+
+# Ejecutar manage.py con poetry run para usar el entorno correcto
+poetry run python manage.py collectstatic --no-input
+poetry run python manage.py migrate --no-input
