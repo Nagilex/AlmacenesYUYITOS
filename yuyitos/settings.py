@@ -18,10 +18,12 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-key')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
+    "almacenesyuyitos.onrender.com",
     "yuyitos.onrender.com",
     "localhost",
-    "127.0.0.1"
+    "127.0.0.1",
 ]
+
 
 # ---- Apps ----
 INSTALLED_APPS = [
