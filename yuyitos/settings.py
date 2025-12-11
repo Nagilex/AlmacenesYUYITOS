@@ -65,7 +65,7 @@ TEMPLATES = [
 # ---- Base de datos PostgreSQL (Render) ----
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),
+        default=os.environ.get('postgresql://yuyitosdb_9cc5_user:fv9gOckSrhH8gu4vqUwLMNhiwYNFVqDf@dpg-d4t1qod6ubrc73ebfa60-a.oregon-postgres.render.com/yuyitosdb_9cc5'),
         conn_max_age=600,
         ssl_require=True
     )
