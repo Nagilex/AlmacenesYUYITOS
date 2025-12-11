@@ -17,7 +17,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # ---- Seguridad y modo producción ----
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-key')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'yuyitos.onrender.com').split(',')
+ALLOWED_HOSTS = [h for h in os.environ.get('ALLOWED_HOSTS', 'yuyitos.onrender.com,localhost,127.0.0.1').split(',') if h]
+
 
 # ---- Apps ----
 INSTALLED_APPS = [
@@ -63,13 +64,16 @@ TEMPLATES = [
 ]
 
 # ---- Base de datos PostgreSQL (Render) ----
+# ---- Base de datos PostgreSQL (Render) ----
+# Usa la variable de entorno DATABASE_URL que configurarás en Render
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('postgresql://yuyitosdb_9cc5_user:fv9gOckSrhH8gu4vqUwLMNhiwYNFVqDf@dpg-d4t1qod6ubrc73ebfa60-a.oregon-postgres.render.com/yuyitosdb_9cc5'),
+        default=os.environ.get('DATABASE_URL'),
         conn_max_age=600,
         ssl_require=True
     )
 }
+
 
 # ---- Validación de contraseñas ----
 AUTH_PASSWORD_VALIDATORS = [
