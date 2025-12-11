@@ -1,0 +1,8 @@
+cat > requirements.txt <<'EOF'
+Django>=5.2.6
+gunicorn
+whitenoise
+psycopg2-binary
+dj-database-url
+python-dotenv
+EOF
